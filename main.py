@@ -15,7 +15,7 @@ async def on_ready():
 			for file in os.listdir(f"./cogs/{filename}"):
 				if filename.endswith("__") or file.endswith("__"):
 					continue
-				bot.load_extension(f"cogs.{filename}.{file[:-3]}")
+				await bot.load_extension(f"cogs.{filename}.{file[:-3]}")
 				logger.info(f"Loaded command cog: {filename}.{file[:-3]}", __name__)
 
 	logger.info(f"Logged in as {bot.user} in {len(bot.guilds)} guild(s).", __name__)
